@@ -5,9 +5,8 @@ Note: You can return the array with its elements in any order.
 */
 
 function diffArray(arr1, arr2) {
- let currentArr1 = arr1; //hold arr1 in a variable because filter modifies an array
  let filterArr1 = arr1.filter(item => arr2.indexOf(item) === -1); 
- let filterArr2 = arr2.filter(item => currentArr1.indexOf(item) === -1); 
+ let filterArr2 = arr2.filter(item => arr1.indexOf(item) === -1); 
 return filterArr1.concat(filterArr2);
 }
 
