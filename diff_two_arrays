@@ -1,0 +1,14 @@
+/*
+Compare two arrays and return a new array with any items only found in one of the two given arrays, but not both. In other words, return the symmetric difference of the two arrays.
+Note: You can return the array with its elements in any order.
+[1, 2, 3, 5], [1, 2, 3, 4, 5] should return [4].
+*/
+
+function diffArray(arr1, arr2) {
+ let currentArr1 = arr1; //hold arr1 in a variable because filter modifies an array
+ let filterArr1 = arr1.filter(item => arr2.indexOf(item) === -1); 
+ let filterArr2 = arr2.filter(item => currentArr1.indexOf(item) === -1); 
+return filterArr1.concat(filterArr2);
+}
+
+diffArray([1, 2, 3, 5], [1, 2, 3, 4, 5]);
